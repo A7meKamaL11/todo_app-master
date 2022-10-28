@@ -164,7 +164,7 @@ class Home_layout extends StatelessWidget {
                 floatingActionButtonLocation:
                     FloatingActionButtonLocation.endDocked,
                 bottomNavigationBar: AnimatedBottomNavigationBar(
-                  icons: [
+                  icons: const [
                     Icons.menu,
                     Icons.done,
                     Icons.archive,
@@ -183,7 +183,7 @@ class Home_layout extends StatelessWidget {
                   iconSize: 35,
                   splashRadius: 50,
                   shadow: BoxShadow(
-                      offset: Offset(0, 1),
+                      offset: const Offset(0, 1),
                       blurRadius: 12,
                       spreadRadius: 0.5,
                       color: HexColor('#FFA400')),

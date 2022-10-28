@@ -1,14 +1,15 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:splash_screen_view/SplashScreenView.dart';
+import 'package:todo_app/shared/components/constants.dart';
 import 'package:todo_app/shared/observer.dart';
 
 import 'layout/Home_Layout.dart';
-import 'modules/bmi_app/BMI_Screen.dart';
-import 'modules/counter/Counter.dart';
+
 
 void main() {
-  var EmailController=TextEditingController();
-  var PassController=TextEditingController();
+  //var EmailController=TextEditingController();
+  //var PassController=TextEditingController();
   Bloc.observer = MyBlocObserver();
   runApp(myApp());
 }
@@ -23,7 +24,25 @@ class _myAppState extends State<myApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:Home_layout () ,
+      home:SplashScreenView(
+        navigateRoute: Home_layout(),
+        duration: 6000,
+        imageSize: 130,
+        imageSrc: 'assets/logo.png',
+        text: "ToDo App ",
+        textType: TextType.ColorizeAnimationText,
+        textStyle: const TextStyle(
+          fontSize: 30.0,
+          fontWeight: FontWeight.bold,
+        ),
+        colors: [
+          HexColor('#373A36'),
+          HexColor('#FFA400'),
+
+        ],
+        backgroundColor: Colors.white,
+      )
+      // ,
     );
 
   }
